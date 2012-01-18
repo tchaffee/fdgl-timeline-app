@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"
+     xmlns:fb="https://www.facebook.com/2008/fbml"> 
+
+<head prefix="og: http://ogp.me/ns# fb: 
+    http://ogp.me/ns/fb# fdgl-events: 
+    http://ogp.me/ns/fb/fdgl-events#">
+    <meta property="fb:app_id"      content="329017687129308" /> 
+    <meta property="og:type"        content="fdgl-events:fdgl_event" /> 
+    <meta property="og:url"         content="http://fdgl.bluecrow.biz/fdgl-201106.html" /> 
+    <meta property="og:title"       content="FDGL Jun 2011 Event" /> 
+    <meta property="og:description" content="FDGL Jun 2011 Event Desc" /> 
+    <meta property="og:image"       content="http://www.facebookgarage.org.uk/sites/default/files/images/logo-recreated-big-cropped.facebook%20profile.jpg" /> 
+
+<script type="text/javascript">
+    function postAttend() {
+    FB.api('/me/fdgl-events:attend' + 
+        '?fdgl_event=' +
+        'http://fdgl.bluecrow.biz/' + 
+        'fdgl-201106.html',
+        'post',
+        postAttendCallback);
+    }
+
+    function postAttendCallback(response) {
+        if (!response || response.error) {
+            alert('Error occured');
+            console.log(response.error);
+        } 
+        else {
+            alert('Post was successful! Action ID: ' + response.id);
+        }
+    }
+</script>
+
+<head/> 
+
+<body>
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    FB.init({ 
+        appId:'329017687129308', cookie:true, 
+        status:true, xfbml:true, oauth:true
+    });
+</script>
+
+<h3>FDGL Events</h3>
+<p>FDGL June 2011 Event<p> 
+
+
+<form>
+    <input type="button" value="Attend"
+        onclick="postAttend()" />
+</form>
+</body>
+</html>
